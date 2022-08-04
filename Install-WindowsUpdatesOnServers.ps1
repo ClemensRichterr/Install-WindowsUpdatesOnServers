@@ -2,7 +2,7 @@
 Function Install-WindowsUpdatesOnServers {
     <#
     .SYNOPSIS
-        This is a basic overview of what the script is used for..
+        Used for automating my windows update workflow on servers
     
     
     .NOTES
@@ -12,9 +12,8 @@ Function Install-WindowsUpdatesOnServers {
         DateCreated: 2022-July-31
     
     
-    #.EXAMPLE
-    #    Get-Something -UserPrincipalName "username@thesysadminchannel.com"
-    
+    .EXAMPLE
+        Install-WindowsUpdatesOnServers -TriggerDate 19:40
     #>
     
     [CmdletBinding()]
@@ -53,6 +52,3 @@ Function Install-WindowsUpdatesOnServers {
 }
 #RUN 
 Install-WindowsUpdatesOnServers
-#For Development important commands 
-#Get-ChildItem -Path "C:\Program Files\WindowsPowerShell\Modules\PSWindowsUpdate" -Recurse | Remove-Item -Force -Recurse
-#Remove-Item -Path "C:\Program Files\WindowsPowerShell\Modules\PSWindowsUpdate" -Force 
