@@ -8,8 +8,10 @@ I built this script mainly to simplify my Windows Update workflow on Windows ser
 
  1. Copy the script and the associated ini file to the server on which Windows Updates are to be installed.
  2. Adjust the parameters in the ini file so that they meet your requirements
- 2.1 **TriggerDate**: Determines when to start installing the updates
- 2.2 **LogFileLocation**: Determines where the log file is stored
+
+- **TriggerDate**: Determines when to start installing the updates
+- **LogFileLocation**: Determines where the log file is stored
+
  3. Run script
 
 ### Hints
