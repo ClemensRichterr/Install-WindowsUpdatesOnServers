@@ -7,7 +7,7 @@ Function Install-WindowsUpdatesOnServers {
     
     .NOTES
         Name: Install-WindowsUpdatesOnServers
-        Author: ClemensRichterr
+        Author: Clemens Richter
         Version: 0.85
         DateCreated: 2022-July-31
     
