@@ -7,12 +7,12 @@ I built this script mainly to simplify my Windows Update workflow on Windows ser
 ## Usage
 
  0. Read LICENSE
- 1. Download the script and if you need, the backup of the GPO (To deploy a task to all Servers)
+ 1. Download the script. And the backup of the GPO (To deploy a task to all Servers), if you need
  2. Adjust the parameters in the script (line 1 to 6) so that they meet your requirements
 
     - $CurrentDate = Get-Date -Format "MMddyyyy"
-    - $PSWindowsUpdateModuleNetworkLocaiton = "\\Server.lab.local\PSWU$\Module\PSWindowsUpdate"
-    - $LogFile =  "\\Server.lab.local\PSWU$\Log\UpdateTaskLog_" + $env:computername + "_" + $CurrentDate + ".txt"
+    - $PSWindowsUpdateModuleNetworkLocaiton = ""
+    - $LogFile =  ""
     - $ServersThatAreRebootingAt1AM = "ExchangeServer","DC"
     - $ServersThatAreRebootingAt2AM = "CA","DC2"
     - $ServersThatAreRebootingAt3AM = "WSUS"
