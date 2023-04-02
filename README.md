@@ -21,7 +21,7 @@ I built this script mainly to simplify my Windows Update workflow on Windows ser
 
 ### Hints
 
-- The [PSWindowsUpdate](https://www.powershellgallery.com/packages/PSWindowsUpdate) module does not have to be preinstalled. My script checks if it is available. If it is not available, you will be prompted to install it
+- The [PSWindowsUpdate](https://www.powershellgallery.com/packages/PSWindowsUpdate) module does not have to be preinstalled on the servers which are running the script. My script checks if it is available. If it is not available it will copy the module from a network location.
 - My script installs the Windows Updates with the following [PSWindowsUpdate](https://www.powershellgallery.com/packages/PSWindowsUpdate) parameters (this can be adjusted if necessary, just like the whole script):
   - `-AcceptAll` All available updates will be installed
 
