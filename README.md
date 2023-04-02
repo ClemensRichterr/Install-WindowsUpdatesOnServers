@@ -2,24 +2,28 @@
 
 ## Story
 
-I built this script mainly to simplify my Windows Update workflow on Windows servers. Since you often have the problem that you cannot restart the server during working hours etc
+I built this script mainly to simplify my Windows Update workflow on Windows servers. Since you often have the problem that you cannot restart the server during working hours etc.
 
 ## Usage
 
- 1. Copy the script and the associated ini file to the server on which Windows Updates are to be installed.
- 2. Adjust the parameters in the ini file so that they meet your requirements
+ 0. Read LICENSE
+ 1. Download the script and if you need, the backup of the GPO (To deploy a task to all Servers)
+ 2. Adjust the parameters in the script (line 1 to 6) so that they meet your requirements
 
-- **TriggerDate**: Determines when to start installing the updates
-- **LogFileLocation**: Determines where the log file is stored
+    - $CurrentDate = Get-Date -Format "MMddyyyy"
+    - $PSWindowsUpdateModuleNetworkLocaiton = "\\Server.lab.local\PSWU$\Module\PSWindowsUpdate"
+    - $LogFile =  "\\Server.lab.local\PSWU$\Log\UpdateTaskLog_" + $env:computername + "_" + $CurrentDate + ".txt"
+    - $ServersThatAreRebootingAt1AM = "ExchangeServer","DC"
+    - $ServersThatAreRebootingAt2AM = "CA","DC2"
+    - $ServersThatAreRebootingAt3AM = "WSUS"
 
- 3. Run script
+ 3. (Deploy the script via GPO after adjusting the task parameters of the GPO.)
 
 ### Hints
 
 - The [PSWindowsUpdate](https://www.powershellgallery.com/packages/PSWindowsUpdate) module does not have to be preinstalled. My script checks if it is available. If it is not available, you will be prompted to install it
 - My script installs the Windows Updates with the following [PSWindowsUpdate](https://www.powershellgallery.com/packages/PSWindowsUpdate) parameters (this can be adjusted if necessary, just like the whole script):
   - `-AcceptAll` All available updates will be installed
-  - `-AutoReboot` Automatically restarts the server after installing the updates to apply the updates
 
 ## Note of Thanks
 
